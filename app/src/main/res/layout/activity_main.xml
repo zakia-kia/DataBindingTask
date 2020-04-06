@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainBinding"
+            type="com.zakia.idn.databindingtask.data.MainViewModel" />
+        <variable
+            name="imageFood"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/iv_food"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:contentDescription="@string/image_menu"
+            android:scaleType="centerCrop"
+            android:src="@{imageFood}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_like_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16"
+            android:text="@{Integer.toString(mainBinding.scoreLike)}"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_like"
+            app:layout_constraintEnd_toStartOf="@+id/iv_unlike"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_like"
+            app:layout_constraintTop_toTopOf="@+id/iv_like"
+            app:layout_constraintVertical_bias="0.507" />
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="64dp"
+            android:contentDescription="@string/icon"
+            app:layout_constraintEnd_toStartOf="@+id/tv_like_number"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_food"
+            app:popularityIcon="@{mainBinding.popularity}" />
+
+        <ImageView
+            android:id="@+id/iv_unlike"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/_16"
+            android:contentDescription="@string/unlike"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_like"
+            app:layout_constraintEnd_toStartOf="@+id/tv_unlike_number"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_like_number"
+            app:layout_constraintTop_toTopOf="@+id/iv_like"
+            app:unPopularityIcon="@{mainBinding.unPopularity}" />
+
+        <TextView
+            android:id="@+id/tv_unlike_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16"
+            android:text="@{Integer.toString(mainBinding.scoreUnLike)}"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_like"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_unlike"
+            app:layout_constraintTop_toTopOf="@+id/iv_like" />
+
+        <Button
+            android:id="@+id/btn_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="52dp"
+            android:onClick="@{()-> mainBinding.onLike()}"
+            android:text="@string/btn_like"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_like" />
+
+        <Button
+            android:id="@+id/btn_unlike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="92dp"
+            android:onClick="@{()-> mainBinding.onUnLike()}"
+            android:text="@string/btn_unlike"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_unlike" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

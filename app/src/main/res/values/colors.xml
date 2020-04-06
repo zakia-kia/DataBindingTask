@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="normal">#f48fb1</color>
+    <color name="popular">#ba2d65</color>
+    <color name="star">#9b0000</color>
+
+    <color name="color_normal">#f48fb1</color>
+    <color name="Unpopular">#ba2d65</color>
+    <color name="color_Dissatisfying">#9b0000</color>
+</resources>

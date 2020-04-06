@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DataBindingTask</string>
+    <string name="image_menu">ivmenu</string>
+    <string name="icon">icon</string>
+    <string name="btn_like">Like</string>
+    <string name="btn_unlike">unlike</string>
+    <string name="score_like">123</string>
+    <string name="score">score</string>
+    <string name="score_unlike">12</string>
+    <string name="unlike">iconUnlike</string>
+</resources>
